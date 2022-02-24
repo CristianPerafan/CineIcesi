@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+   <left>
+      <AnchorPane prefHeight="194.0" prefWidth="132.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="102.0" fitWidth="93.0" layoutX="23.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="https://oportunidades.icesi.edu.co/images/espanol/logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane prefHeight="274.0" prefWidth="197.0" style="-fx-background-color: #0978D5;" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="WHITE" fontSmoothingType="LCD" layoutX="41.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CINE ICESI" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Text>
+            <Label layoutX="14.0" layoutY="54.0" text="Identificiación" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="userField" layoutX="14.0" layoutY="74.0" promptText="CC" />
+            <Label layoutX="14.0" layoutY="113.0" text="Contraseña" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="passwordField" layoutX="15.0" layoutY="133.0" promptText="Contraseña" />
+            <Button fx:id="loginButton" layoutX="53.0" layoutY="172.0" mnemonicParsing="false" onAction="#LoginAction" style="-fx-background-color: #0800FF;" text="Ingresar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>
