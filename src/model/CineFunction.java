@@ -1,6 +1,7 @@
 package model;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 import enumerations.CinemaType;
 
@@ -11,20 +12,31 @@ public class CineFunction {
 	
 	private LocalDate date;
 	
-	private int movieDurationHours;
+	private LocalTime startTime;
 	
+	private LocalTime endTime;
+	
+	@SuppressWarnings("unused")
+	private int movieDurationHours;
+	@SuppressWarnings("unused")
 	private int movieDurationMinutes;
+	
 	
 	///Relations///
 	private CinemaType cinemaType;
 	
-	public CineFunction(String name, LocalDate date, int movieDurationHours, int movieDurationMinutes,
-			int identifierType) {
+	public CineFunction(String name, LocalDate date, LocalTime starTime,
+			int movieDurationHours, int movieDurationMinutes ,LocalTime endTime, int identifierType) {
 		
 		this.name = name;
 		this.date = date;
+		this.startTime = starTime;
+		
 		this.movieDurationHours = movieDurationHours;
 		this.movieDurationMinutes = movieDurationMinutes;
+		
+		this.endTime = endTime;
+		
 		
 		if(identifierType == 0) {
 			setCinemaType(CinemaType.MINICIMENA);
@@ -53,22 +65,25 @@ public class CineFunction {
 	public void setDate(LocalDate date) {
 		this.date = date;
 	}
+	
+	
 
-	public int getMovieDurationHours() {
-		return movieDurationHours;
+	public LocalTime getStartTime() {
+		return startTime;
 	}
 
-	public void setMovieDurationHours(int movieDurationHours) {
-		this.movieDurationHours = movieDurationHours;
+	public void setStartTime(LocalTime startTime) {
+		this.startTime = startTime;
 	}
 
-	public int getMovieDurationMinutes() {
-		return movieDurationMinutes;
+	public LocalTime getEndTime() {
+		return endTime;
 	}
 
-	public void setMovieDurationMinutes(int movieDurationMinutes) {
-		this.movieDurationMinutes = movieDurationMinutes;
+	public void setEndTime(LocalTime endTime) {
+		this.endTime = endTime;
 	}
+
 
 	public CinemaType getCinemaType() {
 		return cinemaType;
