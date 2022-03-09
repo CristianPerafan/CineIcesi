@@ -11,8 +11,7 @@ public class IcesiCinema {
 	@SuppressWarnings("unused")
 	private Cinema mediumRoom;
 	
-	@SuppressWarnings("unused")
-	private ArrayList<Function> functions;
+	private ArrayList<CineFunction> functions;
 	
 	public IcesiCinema() {
 		
@@ -23,8 +22,13 @@ public class IcesiCinema {
 		mediumRoom = new Cinema(6,7);
 		
 		//Functions of Icesi Cinema
-		functions = new ArrayList<Function>();
+		functions = new ArrayList<CineFunction>();
 		
+	}
+	
+	public void addAFunction(CineFunction function) {
+		
+		functions.add(function);
 	}
 
 }

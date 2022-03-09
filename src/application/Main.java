@@ -1,11 +1,17 @@
 package application;
 	
 
+
+import java.io.IOException;
+
 import controller.LoginController;
 import controller.MenuBarController;
+import controller.RegisterAFunctionController;
 import javafx.application.Application;
 import javafx.stage.Stage;
+import model.IcesiCinema;
 import model.Users;
+import model.CineFunction;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.fxml.FXMLLoader;
@@ -13,14 +19,20 @@ import javafx.fxml.FXMLLoader;
 
 public class Main extends Application {
 	
-	@SuppressWarnings("unused")
 	private Stage currentStage;
 	private Users user;
+	
+	//Model Controller
+	private IcesiCinema modelController;
 	
 	@Override
 	public void start(Stage primaryStage) {
 		user = new Users();
+		
 		user.addUser("admin","admin");
+		
+		modelController = new IcesiCinema();
+		
 		try {
 			showLogin();
 
@@ -84,7 +96,46 @@ public class Main extends Application {
 		catch(Exception e){
 			e.printStackTrace();
 		}
+	}
+	
+	public void ShowRegisterAFunction() {
 		
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/MenuBar.fxml"));
+			BorderPane root = (BorderPane)loader.load();
+			
+			MenuBarController barController = loader.getController();
+			barController.setMain(this);
+			
+			Scene scene = new Scene(root);
+			
+			Stage stage = new Stage();
+			
+			stage.setScene(scene);
+			
+			currentStage.close();
+			
+			BorderPane newRoot;
+			
+			/////
+			FXMLLoader registerLoader = new FXMLLoader(getClass().getResource("../ui/RegisterAFunction.fxml"));
+			BorderPane registerView = (BorderPane)registerLoader.load();
+			
+			RegisterAFunctionController registerController = registerLoader.getController();
+			
+			registerController.setMain(this);
+			
+			newRoot = (BorderPane)stage.getScene().getRoot();
+			
+            newRoot.setCenter(registerView);
+			
+			currentStage = stage;
+			
+			stage.show();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 
@@ -92,5 +143,11 @@ public class Main extends Application {
 	
 	public static void main(String[] args) {
 		launch(args);
+	}
+	
+	public void addAFunction(CineFunction function) {
+		
+		modelController.addAFunction(function);
+		
 	}
 }

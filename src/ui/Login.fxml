@@ -17,7 +17,7 @@
          <children>
             <ImageView fitHeight="102.0" fitWidth="93.0" layoutX="23.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="https://oportunidades.icesi.edu.co/images/espanol/logo.png" />
+                  <Image url="@../mediaSource/logoIcesi.png" />
                </image>
             </ImageView>
          </children>

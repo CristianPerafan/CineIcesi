@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="383.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RegisterAFunctionController">
+   <left>
+      <AnchorPane prefHeight="383.0" prefWidth="214.0" style="-fx-background-color: #77B7FF;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="383.0" fitWidth="269.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../mediaSource/RegisterFuctionView.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane prefHeight="383.0" prefWidth="341.0" style="-fx-background-color: #77B7FF;" BorderPane.alignment="CENTER" />
+   </right>
+</BorderPane>

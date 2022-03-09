@@ -2,19 +2,15 @@ package controller;
 
 import application.Main;
 
-public class MenuBarController {
+public class RegisterAFunctionController {
 	
+	//Relations
+	@SuppressWarnings("unused")
 	private Main main;
 
-	public MenuBarController() {
+	public RegisterAFunctionController() {
 		// TODO Auto-generated constructor stub
 	}
-	
-	public void registerAFunction(){
-		main.ShowRegisterAFunction();
-	}
-	
-	
 	
 	public void setMain(Main main) {
 		this.main = main;

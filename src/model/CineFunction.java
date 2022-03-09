@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 import enumerations.CinemaType;
 
-public class Function {
+public class CineFunction {
 	
 	///Attributes///
 	private String name;
@@ -18,7 +18,7 @@ public class Function {
 	///Relations///
 	private CinemaType cinemaType;
 	
-	public Function(String name, LocalDate date, int movieDurationHours, int movieDurationMinutes,
+	public CineFunction(String name, LocalDate date, int movieDurationHours, int movieDurationMinutes,
 			int identifierType) {
 		
 		this.name = name;
