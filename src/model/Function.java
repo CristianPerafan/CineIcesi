@@ -2,6 +2,8 @@ package model;
 
 import java.time.LocalDate;
 
+import enumerations.CinemaType;
+
 public class Function {
 	
 	///Attributes///
@@ -14,16 +16,27 @@ public class Function {
 	private int movieDurationMinutes;
 	
 	///Relations///
+	private CinemaType cinemaType;
 	
-
-	public Function(String name, LocalDate date, int movieDurationHours, int movieDurationMinutes) {
+	public Function(String name, LocalDate date, int movieDurationHours, int movieDurationMinutes,
+			int identifierType) {
 		
 		this.name = name;
 		this.date = date;
 		this.movieDurationHours = movieDurationHours;
 		this.movieDurationMinutes = movieDurationMinutes;
 		
+		if(identifierType == 0) {
+			setCinemaType(CinemaType.MINICIMENA);
+		}
+		else {
+			setCinemaType(CinemaType.MEDIUMCINEMA);
+		}
+		
+		
 	}
+	
+	//Getters and Setters
 
 	public String getName() {
 		return name;
@@ -55,6 +68,14 @@ public class Function {
 
 	public void setMovieDurationMinutes(int movieDurationMinutes) {
 		this.movieDurationMinutes = movieDurationMinutes;
+	}
+
+	public CinemaType getCinemaType() {
+		return cinemaType;
+	}
+
+	public void setCinemaType(CinemaType cinemaType) {
+		this.cinemaType = cinemaType;
 	}
 
 }

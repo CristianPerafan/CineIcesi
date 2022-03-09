@@ -3,14 +3,36 @@ package model;
 public class Person {
 	
 	//Attributes
-	@SuppressWarnings("unused")
 	private String name;
-	@SuppressWarnings("unused")
 	private String id;
 	
-
-	public Person() {
-		// TODO Auto-generated constructor stub
+	//Constructor method
+	public Person(String name, String id) {
+		this.name = name;
+		this.id = id;
 	}
+	
+	
+	//Getters and Setters
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+
+
+
+
 
 }

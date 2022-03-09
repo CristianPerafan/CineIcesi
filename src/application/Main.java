@@ -1,10 +1,8 @@
 package application;
 	
 
-import java.io.IOException;
-
 import controller.LoginController;
-import controller.MainMenuController;
+import controller.MenuBarController;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import model.Users;
@@ -15,6 +13,7 @@ import javafx.fxml.FXMLLoader;
 
 public class Main extends Application {
 	
+	@SuppressWarnings("unused")
 	private Stage currentStage;
 	private Users user;
 	
@@ -55,23 +54,34 @@ public class Main extends Application {
 		
 	}
 	
-	public void showMainMenu() {
+	public void showInitialViewAndBarMenu() {
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/MainMenu.fxml"));
-			BorderPane root = (BorderPane)loader.load();
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/MenuBar.fxml"));
+			BorderPane root;
+			root = (BorderPane)loader.load();
 			
-			MainMenuController controller = loader.getController();
+			MenuBarController controller = loader.getController();
 			controller.setMain(this);
 			
 			Scene scene = new Scene(root);
-			
 			Stage stage = new Stage();
+			
 			stage.setScene(scene);
+			
 			currentStage.close();
-			stage.show();
+			
 			currentStage = stage;
+			
+			BorderPane newRoot;
+			
+			BorderPane initialView = (BorderPane)FXMLLoader.load(getClass().getResource("../ui/InitialView.fxml"));
+			
+			newRoot = (BorderPane)stage.getScene().getRoot();
+			newRoot.setCenter(initialView);
+			
+			stage.show();
 		}
-		catch(IOException e) {
+		catch(Exception e){
 			e.printStackTrace();
 		}
 		

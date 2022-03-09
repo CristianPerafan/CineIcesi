@@ -42,9 +42,12 @@ public class LoginController {
 		
 		String password = passwordField.getText();
 		
+		user = "admin";
+		password = "admin";
+		
 		try {
 			users.validate(user,password);
-			main.showMainMenu();
+			main.showInitialViewAndBarMenu();
 			
 		}catch(UserNotFoundException | PasswordNotMatchException e){
 			Alert alert = new Alert(AlertType.ERROR);
