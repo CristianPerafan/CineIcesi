@@ -6,10 +6,12 @@ import java.time.LocalTime;
 import application.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import model.CineFunction;
 
 public class RegisterAFunctionController {
@@ -28,7 +30,7 @@ public class RegisterAFunctionController {
 	private TextField textFieldDurationHours,textFieldDurationMinutes;
 	
 	@FXML
-	private DatePicker datepicker;
+	private DatePicker datePicker;
 	
 	@FXML
 	private RadioButton miniCinemaRadioButton,mediumCinemaRadioButton;
@@ -49,7 +51,7 @@ public class RegisterAFunctionController {
 		
 		String name = textFieldName.getText();
 		
-		LocalDate date = datepicker.getValue();
+		LocalDate date = datePicker.getValue();
 		
 		
 		String auxStartHour = textFieldStartHour.getText();
@@ -91,9 +93,19 @@ public class RegisterAFunctionController {
 			
 			main.addAFunction(objCineFunction);
 			
+			Alert alert = new Alert(AlertType.CONFIRMATION);
+			alert.setTitle("Proceso exitoso!!");
+			alert.setHeaderText("La función ha sido registrada..");
+		    
+			alert.showAndWait();
+			
 		}
 		catch( RuntimeException e){
-			
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Error de registro!!");
+			alert.setHeaderText("Los datos no son válidos o están incompletos..");
+		    
+			alert.showAndWait();
 		}
 		
 	}

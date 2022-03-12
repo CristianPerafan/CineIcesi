@@ -43,7 +43,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Text>
-            <DatePicker layoutX="14.0" layoutY="137.0" prefHeight="25.0" prefWidth="202.0" promptText="Fecha" />
+            <DatePicker fx:id="datePicker" layoutX="14.0" layoutY="137.0" prefHeight="25.0" prefWidth="202.0" promptText="Fecha" />
             <Text fill="WHITE" layoutX="16.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hora de inicio:">
                <font>
                   <Font name="System Bold" size="14.0" />

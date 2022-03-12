@@ -7,6 +7,15 @@ import enumerations.CinemaType;
 
 public class CineFunction {
 	
+	private final static int ROW_MINIROOM = 4;
+	private final static int COLUMN_MINIROOM = 7;
+	
+	private final static int ROW_MEDIUMROOM = 4;
+	private final static int COLUMN_MEDIUMROOM = 7;
+	
+	
+	
+	
 	///Attributes///
 	private String name;
 	
@@ -20,6 +29,9 @@ public class CineFunction {
 	private int movieDurationHours;
 	@SuppressWarnings("unused")
 	private int movieDurationMinutes;
+	
+	@SuppressWarnings("unused")
+	private Cinema cinemaRoom;
 	
 	
 	///Relations///
@@ -40,9 +52,11 @@ public class CineFunction {
 		
 		if(identifierType == 0) {
 			setCinemaType(CinemaType.MINICIMENA);
+			cinemaRoom = new Cinema(ROW_MINIROOM,COLUMN_MINIROOM);
 		}
 		else {
 			setCinemaType(CinemaType.MEDIUMCINEMA);
+			cinemaRoom = new Cinema(ROW_MEDIUMROOM,COLUMN_MEDIUMROOM);
 		}
 		
 		
