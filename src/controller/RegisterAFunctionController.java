@@ -92,12 +92,15 @@ public class RegisterAFunctionController {
 					durationMinutes,endTime,typeOfCinema);
 			
 			main.addAFunction(objCineFunction);
+		
 			
 			Alert alert = new Alert(AlertType.CONFIRMATION);
 			alert.setTitle("Proceso exitoso!!");
 			alert.setHeaderText("La función ha sido registrada..");
 		    
 			alert.showAndWait();
+			
+			main.showInitialViewAndBarMenu();
 			
 		}
 		catch( RuntimeException e){

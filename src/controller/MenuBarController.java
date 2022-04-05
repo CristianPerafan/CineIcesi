@@ -10,8 +10,16 @@ public class MenuBarController {
 		// TODO Auto-generated constructor stub
 	}
 	
+	public void returnHome() {
+		main.showInitialViewAndBarMenu();
+	}
+	
 	public void registerAFunction(){
 		main.ShowRegisterAFunction();
+	}
+	
+	public void registerAUser() {
+		main.registerAUser();
 	}
 	
 	

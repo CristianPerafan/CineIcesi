@@ -1,12 +1,11 @@
 package application;
 	
-
-
 import java.io.IOException;
 
 import controller.LoginController;
 import controller.MenuBarController;
 import controller.RegisterAFunctionController;
+import controller.RegisterAUserController;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import model.IcesiCinema;
@@ -138,6 +137,45 @@ public class Main extends Application {
 		}
 	}
 	
+	public void registerAUser() {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/MenuBar.fxml"));
+			BorderPane root = (BorderPane)loader.load();
+			
+			MenuBarController barController = loader.getController();
+			barController.setMain(this);
+			
+			Scene scene = new Scene(root);
+			
+			Stage stage = new Stage();
+			
+			stage.setScene(scene);
+			
+			currentStage.close();
+			
+			BorderPane newRoot;
+			
+			/////
+			FXMLLoader registerUserLoader = new FXMLLoader(getClass().getResource("../ui/RegisterAUser.fxml"));
+			BorderPane registerView = (BorderPane)registerUserLoader.load();
+			
+			RegisterAUserController registerUserController = registerUserLoader.getController();
+			
+			registerUserController.setMain(this);
+			
+			newRoot = (BorderPane)stage.getScene().getRoot();
+			
+            newRoot.setCenter(registerView);
+			
+			currentStage = stage;
+			
+			stage.show();
+			
+		}catch(IOException e) {
+			e.printStackTrace();
+		}
+	}
+
 
 
 	
@@ -146,8 +184,6 @@ public class Main extends Application {
 	}
 	
 	public void addAFunction(CineFunction function) {
-		
 		modelController.addAFunction(function);
-		
 	}
 }
