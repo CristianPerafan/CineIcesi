@@ -17,7 +17,6 @@ import model.CineFunction;
 public class RegisterAFunctionController {
 	
 	//Relations
-	@SuppressWarnings("unused")
 	private Main main;
 	
 	@FXML

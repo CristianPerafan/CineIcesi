@@ -10,6 +10,10 @@ public class MenuBarController {
 		// TODO Auto-generated constructor stub
 	}
 	
+	public void goLogin() {
+		main.showLogin();
+	}
+	
 	public void returnHome() {
 		main.showInitialViewAndBarMenu();
 	}

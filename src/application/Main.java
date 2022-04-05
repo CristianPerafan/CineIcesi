@@ -40,8 +40,18 @@ public class Main extends Application {
 		}
 	}
 	
+	public void addANewUser(String id, String password) {
+		user.addUser(id,password);
+	}
+	
 	public void showLogin() {
 		try {
+			
+			
+			if(currentStage != null) {
+				currentStage.close();
+			}
+			
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("../ui/Login.fxml"));
 			BorderPane root;
 			root = (BorderPane)loader.load();
@@ -91,6 +101,8 @@ public class Main extends Application {
 			newRoot.setCenter(initialView);
 			
 			stage.show();
+			
+			
 		}
 		catch(Exception e){
 			e.printStackTrace();
@@ -131,6 +143,8 @@ public class Main extends Application {
 			currentStage = stage;
 			
 			stage.show();
+			
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -171,12 +185,16 @@ public class Main extends Application {
 			
 			stage.show();
 			
+			
 		}catch(IOException e) {
 			e.printStackTrace();
 		}
 	}
-
-
+	
+	public void toSerializeUser() {
+		
+	}
+	
 
 	
 	public static void main(String[] args) {
