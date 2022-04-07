@@ -42,9 +42,6 @@ public class LoginController {
 		
 		String password = passwordField.getText();
 		
-		user = "admin";
-		password = "admin";
-		
 		try {
 			users.validate(user,password);
 			main.showInitialViewAndBarMenu();
