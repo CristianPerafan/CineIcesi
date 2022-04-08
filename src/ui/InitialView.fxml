@@ -4,16 +4,17 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InitialViewController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InitialViewController">
    <left>
-      <AnchorPane prefHeight="400.0" prefWidth="364.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="380.0" prefWidth="385.0" style="-fx-background-color: #4199FD;" BorderPane.alignment="CENTER">
          <children>
-            <TableView fx:id="tablaFunciones" layoutX="34.0" layoutY="136.0" prefHeight="200.0" prefWidth="303.0">
+            <TableView fx:id="tablaFunciones" layoutX="31.0" layoutY="100.0" prefHeight="200.0" prefWidth="303.0">
               <columns>
                 <TableColumn fx:id="columnaNombre" prefWidth="75.0" text="Nombre" />
                 <TableColumn fx:id="columnaFecha" prefWidth="75.0" text="Fecha" />
@@ -21,12 +22,12 @@
                   <TableColumn fx:id="columnaFin" prefWidth="75.0" text="Fin" />
               </columns>
             </TableView>
-            <Label layoutX="71.0" layoutY="88.0" text="Modulo de funciones ">
+            <Label layoutX="68.0" layoutY="46.0" text="Modulo de funciones " textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="23.0" />
                </font>
             </Label>
-            <Button fx:id="bRefresh" layoutX="34.0" layoutY="353.0" mnemonicParsing="false" onAction="#refreshDataFunctions" text="Refrescar">
+            <Button fx:id="bRefresh" layoutX="148.0" layoutY="319.0" mnemonicParsing="false" onAction="#refreshDataFunctions" style="-fx-background-color: BLUE;" text="Refrescar" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>
@@ -35,9 +36,12 @@
       </AnchorPane>
    </left>
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="374.0" prefWidth="235.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="400.0" fitWidth="236.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="380.0" fitWidth="224.0" layoutX="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../mediaSource/FondoInitialView.png" />
+               </image></ImageView>
          </children>
       </AnchorPane>
    </center>

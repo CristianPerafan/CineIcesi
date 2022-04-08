@@ -39,10 +39,10 @@ public class InitialViewController {
 
 	@FXML
 	public void initialize() {
-	    columnaNombre.setCellValueFactory(new PropertyValueFactory<>("name"));
-	    columnaFecha.setCellValueFactory(new PropertyValueFactory<>("date"));
-	    columnaInicio.setCellValueFactory(new PropertyValueFactory<>("startTime"));
-	    columnaFin.setCellValueFactory(new PropertyValueFactory<>("endTime"));
+	    columnaNombre.setCellValueFactory(new PropertyValueFactory<>("Name"));
+	    columnaFecha.setCellValueFactory(new PropertyValueFactory<>("Date"));
+	    columnaInicio.setCellValueFactory(new PropertyValueFactory<>("StartTime"));
+	    columnaFin.setCellValueFactory(new PropertyValueFactory<>("EndTime"));
 	}
 	public void refreshDataFunctions(ActionEvent e) {
 		
