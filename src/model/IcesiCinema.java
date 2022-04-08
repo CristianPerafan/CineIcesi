@@ -6,6 +6,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 public class IcesiCinema {
 	
 	//Relations
@@ -16,6 +19,7 @@ public class IcesiCinema {
 	private Cinema mediumRoom;
 	
 	private ArrayList<CineFunction> functions;
+	ObservableList <CineFunction> itemsFunctions = FXCollections.observableArrayList();
 	
 	public IcesiCinema() {
 		
@@ -32,6 +36,7 @@ public class IcesiCinema {
 	
 	public void addAFunction(CineFunction function) {
 		functions.add(function);
+		itemsFunctions.add(function);
 		serializeFunction();
 	}
 	
@@ -57,4 +62,12 @@ public class IcesiCinema {
 		
 		
 	}
+	public ObservableList<CineFunction> getDatos(){
+		return itemsFunctions; 
+	}
+	
+	public ArrayList<CineFunction> getDaticos(){
+		return functions; 
+	}
+	
 }

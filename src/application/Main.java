@@ -1,12 +1,15 @@
 package application;
 	
 import java.io.IOException;
+import java.util.ArrayList;
 
+import controller.InitialViewController;
 import controller.LoginController;
 import controller.MenuBarController;
 import controller.RegisterAFunctionController;
 import controller.RegisterAUserController;
 import javafx.application.Application;
+import javafx.collections.ObservableList;
 import javafx.stage.Stage;
 import model.IcesiCinema;
 import model.Users;
@@ -94,8 +97,10 @@ public class Main extends Application {
 			currentStage = stage;
 			
 			BorderPane newRoot;
-			
-			BorderPane initialView = (BorderPane)FXMLLoader.load(getClass().getResource("../ui/InitialView.fxml"));
+			FXMLLoader loader1 = new FXMLLoader(getClass().getResource("../ui/InitialView.fxml"));
+			BorderPane initialView = (BorderPane)loader1.load();
+			InitialViewController ivc = loader1.getController();
+			ivc.setMain(this);
 			
 			newRoot = (BorderPane)stage.getScene().getRoot();
 			newRoot.setCenter(initialView);
@@ -193,6 +198,23 @@ public class Main extends Application {
 	
 	public void toSerializeUser() {
 		
+	}
+	
+	public ObservableList<CineFunction>getDatasFunction(){
+		ObservableList<CineFunction> aux = modelController.getDatos();
+		return aux;
+	}
+	public ArrayList<CineFunction>getDatasFunction2(){
+
+		return modelController.getDaticos();
+	}
+	
+	public boolean validateDataFunctions() {
+		if(modelController.getDatos()==null) {
+			return true; 
+		}else {
+			return false;
+		}
 	}
 	
 
